@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 5px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        
+    
+    <h2>Order Details</h2>
+        <table style="width:100%" >
+            <tr>
+                <th>orderId:</th>
+                <td>{{pizza.id}}</td>
+            </tr>
+            <tr>
+                <th>total Amount</th>
+                <td>{{pizza.name}}</td>
+            </tr>
+            <tr>
+                <th>delivery details</th>
+                <td>{{pizza.status}}</td>
+            </tr>
+            <tr>
+                <th rowspan="2">item detials</th>
+                <td>{{pizza.amount}}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
