@@ -5,16 +5,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PizzaOrdersComponent } from './pizza-orders/pizza-orders.component';
 import { PizzaOrderDetailsComponent } from './pizza-order-details/pizza-order-details.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PizzaAddDetailsComponent } from './pizza-add-details/pizza-add-details.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     PizzaOrdersComponent,
-    PizzaOrderDetailsComponent
+    PizzaOrderDetailsComponent,
+    PizzaAddDetailsComponent,
+     
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

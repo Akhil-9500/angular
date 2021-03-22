@@ -8,6 +8,7 @@
         td {
             border: 1px solid black;
             border-collapse: collapse;
+  margin-left: 50px;
         }
 
         th,
@@ -20,10 +21,10 @@
 
 <body>
     <div>
-        
+        <br>
     
     <h2>Order Details</h2>
-        <table style="width:100%" >
+        <table style="width:90%" >
             <tr>
                 <th>orderId:</th>
                 <td>{{pizza.id}}</td>
@@ -42,6 +43,20 @@
             </tr>
         </table>
     </div>
+    <br>
+    <br>
+    <!-- <div><button onclick="myFunction()">Click me</button></div> -->
+    <!-- <input type="button" value="Click me" onclick="myFunction()"> -->
+    <button (click)="goBack()">go back</button>
+    
+<!-- 
+    <div>
+        <input type="button" value="Go back" >
+        <a routerLink="/AllOrders"></a>
+    </div> -->
+   
+    
 </body>
+
 
 </html>

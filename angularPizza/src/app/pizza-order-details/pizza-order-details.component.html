@@ -4,6 +4,8 @@
 table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
+  margin-left: 50px;
+  
 }
 th, td {
   padding: 5px;
@@ -14,8 +16,10 @@ th, td {
 
 
 <h2>All Orders</h2>
+<br>
+<br>
 
-<table style="width:100%" class="table">
+<table style="width: 80%" class="table">
     <tr>
         <th>OrderId</th>
             <th>Customer Name</th>
@@ -25,7 +29,7 @@ th, td {
             <th>Change Status</th>
       </tr>
       <tr *ngFor="let pizza of pizzaDetails" [class.selected]="pizza === selectedPizza" >
-        <td><a routerLink="/orderId/{{pizza.id}}"><span class="idClass" (click)="onSelect(pizza)">{{pizza.id}}</span></a> </td>
+        <td><a routerLink="/orderId/{{pizza.id}}"><span class="idClass">{{pizza.id}}</span></a> </td>
         <td>{{pizza.name}}</td>
         <td>{{pizza.noItems}}</td>
         <td>{{pizza.amount}}</td>
@@ -33,6 +37,8 @@ th, td {
         <td>{{pizza.changestatus}}</td>
       </tr>
   </table>
+ 
+  <app-pizza-add-details [pizzaDetails]="pizzaDetails"></app-pizza-add-details>
 
   <!-- <tr *ngFor="let pizza of pizzaDetails" [class.selected]="pizza === selectedPizza" >
         <td> <span class="idClass" (click)="onSelect(pizza)">{{pizza.id}}</span> </td>

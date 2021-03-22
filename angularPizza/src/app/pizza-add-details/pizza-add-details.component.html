@@ -1,0 +1,29 @@
+<p>pizza-add-details works!</p>
+<div class="addDetails">
+  orderId:<input #orderId />
+      <br>
+     name:<input #pizzaObj />
+      <br>
+     NoItems: <input #noItems> 
+    <br>
+    Amount:  <input #amount> 
+    <br>
+    Status: <input #status> 
+    <br>
+    Changestatus:<input  #changestatus>
+    <br>
+  
+    <button class="addDetails" (click)="addDetails(orderId.value,pizzaObj.value,noItems.value,amount.value,status.value,changestatus.value)">
+      add
+    </button>
+  
+</div>
+<!-- <div >
+  <app-pizza-order-details  [pizza]="pizza"> </app-pizza-order-details>
+</div> -->
+
+<!-- name:<input #pizzaObj />
+      <button (click)="addDetails(pizzaObj.value); pizzaObj.value=''">
+        add
+      </button>
+      <span>{{pizza[0]}}</span -->

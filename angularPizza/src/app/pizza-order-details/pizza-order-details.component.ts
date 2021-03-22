@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { pizza } from '../pizza';
 import { PizzaService } from '../pizza.services';
 
@@ -7,9 +7,11 @@ import { PizzaService } from '../pizza.services';
   templateUrl: './pizza-order-details.component.html',
   styleUrls: ['./pizza-order-details.component.scss']
 })
-export class PizzaOrderDetailsComponent implements OnInit {
-  pizzaDetails : pizza[];
-  selectedPizza:any;
+export class PizzaOrderDetailsComponent implements OnInit  {
+  pizzaDetails : any;
+  selectedPizza : any;
+
+
   constructor(private pizzaService : PizzaService) { }
 
   ngOnInit() {
@@ -17,12 +19,17 @@ export class PizzaOrderDetailsComponent implements OnInit {
   }
 
   getPizza(): void {
-    this.pizzaService.getPIZZA()
-    .subscribe(pizzaDetails => this.pizzaDetails = pizzaDetails);
-  }
+    if(localStorage.getItem('data')){
+      this.pizzaDetails=JSON.parse(localStorage.getItem('data'))
+    }
+    else{
+      this.pizzaService.getPIZZA()
+      .subscribe(pizzaDetails => {this.pizzaDetails = pizzaDetails;
+       localStorage.setItem('data',JSON.stringify(pizzaDetails)) 
+      }
+        );
+    }
 
-  onSelect(pizza: pizza): void {
-    this.selectedPizza = pizza;
+    
   }
-
 }
