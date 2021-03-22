@@ -13,7 +13,6 @@ export class PizzaOrdersComponent implements OnInit {
   pizza: pizza;
 
   constructor(private route: ActivatedRoute,private pizzaService: PizzaService,private location: Location) { }
- // @Input() pizza: pizza;
 
  ngOnInit(): void {
   this.getHero();
